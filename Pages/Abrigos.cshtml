@@ -1,0 +1,27 @@
+@page
+@model ColdConnectApp.Pages.AbrigosModel
+@{
+    ViewData["Title"] = "Abrigos";
+}
+
+<h2>Abrigos cadastrados</h2>
+
+<table class="table">
+    <thead>
+        <tr>
+            <th>Nome</th>
+            <th>Endereço</th>
+            <th>Doações</th>
+        </tr>
+    </thead>
+    <tbody>
+    @foreach(var abrigo in Model.Abrigos)
+    {
+        <tr>
+            <td>@abrigo.Nome</td>
+            <td>@abrigo.Endereco</td>
+            <td>@abrigo.Doacoes?.Count ?? 0</td>
+        </tr>
+    }
+    </tbody>
+</table>
